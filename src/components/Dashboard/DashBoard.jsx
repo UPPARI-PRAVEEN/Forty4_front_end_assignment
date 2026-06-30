@@ -2,15 +2,19 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../../styles/dashboard.css";
 import getUserCards from "../utils/getUserCards";
+import { useDispatch, useSelector } from "react-redux";
+import { setUsers } from "../store/userSlice";
 
 const DashBoard = () => {
-  const [userData, setUserData] = useState([]);
+  // const [userData, setUserData] = useState([]);
   const [searchEle, setSearchEle] = useState("");
   const [searchData, setSearchData] = useState([]);
+  const dispatch = useDispatch();
+  const userData = useSelector((state) => state.users.userData);
 
   const fetchApiData = async () => {
     const response = await axios.get("https://dummyjson.com/users");
-    setUserData(response.data.users);
+    dispatch(setUsers(response.data.users));
   };
   useEffect(() => {
     fetchApiData();
@@ -29,7 +33,6 @@ const DashBoard = () => {
 
     handleSearch();
   }, [searchEle]);
-  
 
   // get all userDetails
   const handleUserDetails = () => {};
@@ -39,6 +42,7 @@ const DashBoard = () => {
 
   return (
     <div className="main-container">
+      {/* Search */}
       <div>
         <p>Search</p>
         <input
@@ -47,6 +51,7 @@ const DashBoard = () => {
           onChange={(e) => setSearchEle(e.target.value)}
         />
       </div>
+      {/* add User */}
       <div>
         <button onClinck={() => handleAddUser()}>add user</button>
       </div>
