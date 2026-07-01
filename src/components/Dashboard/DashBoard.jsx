@@ -27,7 +27,6 @@ const DashBoard = () => {
   useEffect(() => {
     // Search data based "Name"
     const handleSearch = () => {
-      console.log("searchEle", searchEle);
       const filteredData = userData.filter((item) => {
         return item.username.toLowerCase().includes(searchEle.toLowerCase());
       });
@@ -44,7 +43,6 @@ const DashBoard = () => {
 
   // Add new User
   const handleAddUser = () => {
-    console.log("Add User");
     navigate(`/create`);
   };
 

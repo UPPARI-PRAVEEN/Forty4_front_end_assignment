@@ -1,6 +1,6 @@
 import React from "react";
-import CreateUser from "./components/User/createUser";
-import DashBoard from "./components/Dashboard/dashBoard";
+import CreateUser from "./components/User/CreateUser";
+import DashBoard from "./components/Dashboard/DashBoard";
 import { Routes, Route } from 'react-router-dom'
 import UserDetails from "./components/UserDetails/UserDetails";
 
