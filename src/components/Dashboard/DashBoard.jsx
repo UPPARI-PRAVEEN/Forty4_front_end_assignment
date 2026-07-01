@@ -19,9 +19,10 @@ const DashBoard = () => {
     dispatch(setUsers(response.data.users));
   };
   useEffect(() => {
-    fetchApiData();
-    //[] fetch data only on initially rendering
-  }, []);
+    if (userData.length === 0) {
+      fetchApiData();
+    }
+  }, [userData]);
 
   useEffect(() => {
     // Search data based "Name"
@@ -42,7 +43,11 @@ const DashBoard = () => {
   };
 
   // Add new User
-  const handleAddUser = () => {};
+  const handleAddUser = () => {
+    console.log("Add User");
+    navigate(`/create`);
+
+  };
 
   return (
     <div className="main-container">
@@ -57,7 +62,7 @@ const DashBoard = () => {
       </div>
       {/* add User */}
       <div>
-        <button onClinck={() => handleAddUser()}>add user</button>
+        <button onClick={handleAddUser}>add user</button>
       </div>
       <div>
         {searchEle !== "" ? (

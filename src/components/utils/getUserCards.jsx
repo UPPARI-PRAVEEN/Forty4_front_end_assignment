@@ -1,7 +1,7 @@
 import React from "react";
 
 const getUserCards = (data,handleUserDetails) => {
-  console.log("data", data[0]);
+ 
   return (
     <div>
       {data?.map((item, index) => (

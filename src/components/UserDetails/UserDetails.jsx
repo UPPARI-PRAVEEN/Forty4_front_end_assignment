@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const UserDetails = () => {
   const [selectedUser, setSelectedUser] = useState({});
   const userData = useSelector((state) => state.users.userData);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const index = location.state?.index;
     setSelectedUser(userData[index]);
   }, [location, userData]);
+
+    const handleEdit = () => {
+    // Navigate to the edit page with the selected user's data
+    navigate(`/create`, { state: { selectedUser: selectedUser } });
+  }
 
   return (
     <div>
@@ -78,6 +84,7 @@ const UserDetails = () => {
         </p>
       </div>
       <div>
+        <button onClick={handleEdit}>Edit</button>
         <button onClick={() => window.history.back()}>Back</button>
       </div>
     </div>
