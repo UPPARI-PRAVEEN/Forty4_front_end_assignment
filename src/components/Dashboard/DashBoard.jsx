@@ -4,6 +4,7 @@ import "../../styles/dashboard.css";
 import getUserCards from "../utils/getUserCards";
 import { useDispatch, useSelector } from "react-redux";
 import { setUsers } from "../store/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const DashBoard = () => {
   // const [userData, setUserData] = useState([]);
@@ -11,6 +12,7 @@ const DashBoard = () => {
   const [searchData, setSearchData] = useState([]);
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.users.userData);
+  const navigate = useNavigate();
 
   const fetchApiData = async () => {
     const response = await axios.get("https://dummyjson.com/users");
@@ -35,7 +37,9 @@ const DashBoard = () => {
   }, [searchEle]);
 
   // get all userDetails
-  const handleUserDetails = () => {};
+  const handleUserDetails = (index) => {
+    navigate(`/userDetails`, { state: { index: index } });
+  };
 
   // Add new User
   const handleAddUser = () => {};
@@ -58,12 +62,12 @@ const DashBoard = () => {
       <div>
         {searchEle !== "" ? (
           searchData.length > 0 ? (
-            getUserCards(searchData)
+            getUserCards(searchData,handleUserDetails)
           ) : (
             <p>No Search Items found</p>
           )
         ) : (
-          getUserCards(userData)
+          getUserCards(userData,handleUserDetails)
         )}
       </div>
     </div>
