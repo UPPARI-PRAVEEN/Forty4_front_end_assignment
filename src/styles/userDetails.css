@@ -1,0 +1,64 @@
+
+/* Main wrapper */
+.user-details {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: #010d27;
+}
+
+.user-details-header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Profile image */
+.user-details img {
+  display: block;
+  margin: 0 auto 15px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #007bff;
+}
+
+/* Headings */
+.user-details h2,
+.user-details h3 {
+  margin-top: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+  color: white;
+}
+
+/* Text */
+.user-details p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: white;
+}
+
+/* Buttons container */
+.user-details + div {
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* Buttons */
+button {
+  padding: 8px 16px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

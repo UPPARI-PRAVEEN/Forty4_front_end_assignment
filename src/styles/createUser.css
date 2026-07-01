@@ -1,0 +1,75 @@
+/* Page wrapper */
+.create-user-container {
+  padding: 20px;
+  background: #f5f5f5;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Form card */
+.create-details {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+.create-details h2,
+.create-details h3 {
+  margin-top: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+  color: #333;
+}
+
+/* Inputs */
+.create-details input {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.create-details input:focus {
+  border-color: #007bff;
+}
+
+/* Buttons */
+.create-details button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-details button:hover {
+  background: #0056b3;
+}
+
+/* Back button */
+.create-user-container > div {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.create-user-container > div button {
+  padding: 8px 16px;
+  border: none;
+  background: #6c757d;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-user-container > div button:hover {
+  background: #5a6268;
+}

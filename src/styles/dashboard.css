@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Main container */
+.main-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #010d27;
+  min-height: 100vh;
+  gap: 20px;
+}
+
+/* Search + Button section */
+.main-container > div:first-child {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+.search-container div button {
+  background-color: rgb(139, 103, 198);
+}
+
+input {
+  padding: 8px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #007bff;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Card container */
+.container {
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Image */
+.container img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Text */
+.container p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #ffff;
+}
+
+.container button {
+  padding: 8px 30px;
+  margin-top: 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}

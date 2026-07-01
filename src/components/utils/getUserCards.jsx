@@ -3,7 +3,7 @@ import React from "react";
 const getUserCards = (data,handleUserDetails) => {
  
   return (
-    <div>
+    <>
       {data?.map((item, index) => (
         <div key={index} className="container">
           <div>
@@ -16,7 +16,7 @@ const getUserCards = (data,handleUserDetails) => {
           <button onClick={() => handleUserDetails(index,handleUserDetails)}>More Details</button>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

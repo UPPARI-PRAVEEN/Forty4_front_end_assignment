@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { addUser, setUsers, updateUser } from "../store/userSlice";
+import "../../styles/createUser.css";
 
 const CreateUser = () => {
   const dispatch = useDispatch();
@@ -58,14 +59,14 @@ const CreateUser = () => {
     if (isEdit) {
       dispatch(updateUser(formData));
     } else {
-      dispatch(addUser({ ...formData, id: Date.now() })); 
+      dispatch(addUser({ ...formData, id: Date.now() }));
     }
 
     navigate("/");
   };
   return (
-    <div>
-      <form className="user-details" onSubmit={handleSubmit}>
+    <div className="create-user-container">
+      <form className="create-details" onSubmit={handleSubmit}>
         <h2>Basic Info</h2>
 
         <input
@@ -155,6 +156,9 @@ const CreateUser = () => {
 
         <button type="submit">Save</button>
       </form>
+      <div>
+        <button onClick={() => window.history.back()}>Back</button>
+      </div>
     </div>
   );
 };

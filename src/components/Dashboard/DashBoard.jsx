@@ -46,33 +46,35 @@ const DashBoard = () => {
   const handleAddUser = () => {
     console.log("Add User");
     navigate(`/create`);
-
   };
 
   return (
     <div className="main-container">
       {/* Search */}
-      <div>
-        <p>Search</p>
+      <div className="search-container">
+        <div>
+          <p>Search</p>
         <input
           type="text"
           value={searchEle}
           onChange={(e) => setSearchEle(e.target.value)}
         />
-      </div>
-      {/* add User */}
+        </div>
+        {/* add User */}
       <div>
         <button onClick={handleAddUser}>add user</button>
       </div>
-      <div>
+      </div>
+      
+      <div className="card-wrapper">
         {searchEle !== "" ? (
           searchData.length > 0 ? (
-            getUserCards(searchData,handleUserDetails)
+            getUserCards(searchData, handleUserDetails)
           ) : (
             <p>No Search Items found</p>
           )
         ) : (
-          getUserCards(userData,handleUserDetails)
+          getUserCards(userData, handleUserDetails)
         )}
       </div>
     </div>

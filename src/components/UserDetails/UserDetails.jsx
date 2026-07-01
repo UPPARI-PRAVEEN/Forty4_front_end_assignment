@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import "../../styles/userDetails.css";
 
 const UserDetails = () => {
   const [selectedUser, setSelectedUser] = useState({});
@@ -19,8 +20,10 @@ const UserDetails = () => {
   }
 
   return (
-    <div>
-      <h1>UserDetails</h1>
+    <div className="user-details-container">
+      <div className="user-details-header">
+        <h1>UserDetails</h1>
+      </div>
       <div className="user-details">
         <div>
             <img src={selectedUser?.image} alt="user" />
@@ -72,16 +75,6 @@ const UserDetails = () => {
         <p>
           <b>Longitude:</b> {selectedUser?.address?.coordinates?.lng}
         </p>       
-        <h2>Other Info</h2>
-        <p>
-          <b>IP:</b> {selectedUser?.ip}
-        </p>
-        <p>
-          <b>MAC Address:</b> {selectedUser?.macAddress}
-        </p>
-        <p>
-          <b>Role:</b> {selectedUser?.role}
-        </p>
       </div>
       <div>
         <button onClick={handleEdit}>Edit</button>
